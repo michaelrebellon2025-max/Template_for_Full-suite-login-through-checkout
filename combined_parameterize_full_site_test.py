@@ -85,6 +85,7 @@ def test_full_workflow(username,password,
         assert discount_total == expected_discount_total, f'Discount total: expected {expected_discount_total}, got {discount_total}'
     else:
         discount_status, discount_total = None, cart_total
+
 #remove items
     if cart_status == 200:
         remove_status, cart_after_remove = fake_remove_from_cart_api(username, cart_total, items_to_remove)
