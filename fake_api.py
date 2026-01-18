@@ -1,5 +1,3 @@
-# api.py
-
 def fake_login_api(username, password):
     if username == "admin" and password == "secret":
         return 200, "Login Successful"
