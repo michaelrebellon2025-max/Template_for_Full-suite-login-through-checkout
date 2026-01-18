@@ -1,4 +1,3 @@
-# test_workflow.py
 import pytest
 from fake_api import fake_login_api, fake_add_cart_api, fake_checkout_api, fake_apply_discount_api, \
     fake_remove_from_cart_api
@@ -45,13 +44,13 @@ from fake_api import fake_login_api, fake_add_cart_api, fake_checkout_api, fake_
          3, 400, 2,                                       # remove items fails, cart stays 2
          "SUMMER10", 200, 1.8,                             # discount skipped if remove fails
          200, "Order confirmed"),                           # checkout skipped if remove fails
-# ---------------------- Empty  cart ----------------------
+        # ---------------------- Empty  cart ----------------------
         ("admin", "secret", 0, 200, "Login Successful",     # login
          400, 0,                                           # add to cart
          1, 200, 2,                                       # remove items
          "SUMMER10", 200, 1.8,                             # discount skipped if remove fails
          200, "Order confirmed"),                           # checkout skipped if remove fails
-# ---------------------- missing password----------------------
+        # ---------------------- missing password----------------------
         ("admin", "", 2, 401, "Unauthorized",     # login
          200, 2,                                           # add to cart
          1, 200, 2,                                       # remove items
